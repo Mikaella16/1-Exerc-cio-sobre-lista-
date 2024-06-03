@@ -1,0 +1,60 @@
+Def criar_lista(valores_iniciais=[]):
+
+ “””Cria uma lista com valores iniciais (opcional).”””
+
+ Lista = []
+ For valor in valores_iniciais:
+ Lista.append(valor)
+ Return lista
+Def inserir_elemento(lista, indice, valor):
+ “””Insere um elemento na lista em uma posição específica.”””
+ If indice >= 0 and indice <= len(lista):
+ Lista.insert(indice, valor)
+ Else:
+ Print(“Índice inválido para inserção!”)
+ Def remover_elemento(lista, indice, valor=None):
+
+ “””Remove um elemento da lista por índice ou por valor.”””
+
+ Try:
+ If valor is None:
+ Lista.remove(lista[indice])
+ Else:
+ Lista.remove(valor)
+ Except ValueError:
+ Print(“Elemento não encontrado na lista!”)
+Def buscar_elemento(lista, valor):
+ “””Busca um elemento na lista e retorna sua posição (índice).”””
+ Try:
+ Return lista.index(valor)
+ Except ValueError:
+ Return -1
+Def ordenar_lista(lista):
+ “””Ordena os elementos da lista em ordem crescente.”””
+ Lista.sort()
+Def imprimir_lista(lista):
+ “””Imprime todos os elementos da lista de forma organizada.”””
+ Print(“[“, end=””)
+ For i, valor in enumerate(lista):
+ If i == len(lista) – 1:
+ Print(valor, end=”]”)
+ Else:
+
+ Print(valor, “,”, end=””)
+
+# Exemplo de uso
+Lista = criar_lista([10, 5, 2, 4, 1])
+Inserir_elemento(lista, 2, 3)
+Print(lista) # Output: [10, 5, 3, 2, 4, 1]
+Remover_elemento(lista, 4)
+Print(lista) # Output: [10, 5, 3, 2, 1]
+Remover_elemento(lista, valor=5)
+Print(lista) # Output: [10, 3, 2, 1]
+Indice_busca = buscar_elemento(lista, 2)
+If indice_busca != -1:
+ Print(f”Elemento 2 encontrado na posição {indice_busca}”)
+Else:
+ Print(“Elemento 2 não encontrado na lista!”)
+Ordenar_lista(lista)
+Print(lista) # Output: [1, 2, 3, 10]
+Imprimir_lista(lista) # Output: [1, 2, 3, 10]
